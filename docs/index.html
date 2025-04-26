@@ -8,18 +8,58 @@
     <meta name="description" content="Description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/dark.css" />
 </head>
 
 <body>
     <div id="app"></div>
     <script>
+        mermaid.initialize({startOnLoad: false});
         window.$docsify = {
             name: 'Курс Golang',
-            repo: 'https://github.com/GoldenDeals/GoldenDeals.github.io'
+            repo: 'https://github.com/GoldenDeals/GoldenDeals.github.io',
+            markdown: {
+                renderer: {
+                    code: function (code, lang) {
+                        if (lang === "mermaid") {
+                            return (
+                                '<div class="mermaid">' + mermaid.render(lang, code) + "</div>"
+                            );
+                        }
+                        return this.origin.code.apply(this, arguments);
+                    }
+                }
+            },
+            maxLevel: 3,
+            coverpage: true,
+            auto2top: true,
+            executeScript: true,
+            logo: ""
+        }
+
+        if (typeof navigator.serviceWorker !== 'undefined') {
+            navigator.serviceWorker.register('sw.js')
         }
     </script>
     <!-- Docsify v4 -->
     <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+    <script src="//unpkg.com/docsify-copy-code"></script>
+    <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-clike.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-go.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-go-module.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-http.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-regex.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-makefile.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-sql.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-git.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-yaml.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-nasm.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
+
 </body>
 
 </html>
