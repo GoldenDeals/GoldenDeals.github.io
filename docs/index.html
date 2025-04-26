@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Курс Golang</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="description" content="Description">
+    <meta name="description" content="Курс Golang">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css">
@@ -15,6 +15,8 @@
 
 <body>
     <div id="app"></div>
+
+    <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>
         mermaid.initialize({startOnLoad: false});
         window.$docsify = {
@@ -32,11 +34,11 @@
                     }
                 }
             },
-            maxLevel: 3,
-            coverpage: true,
             auto2top: true,
             executeScript: true,
-            logo: ""
+            loadSidebar: true,
+            maxLevel: 3,
+            logo: "https://raw.githubusercontent.com/GoldenDeals/GoldenDeals.github.io/refs/heads/main/assets/logo.ico",
         }
 
         if (typeof navigator.serviceWorker !== 'undefined') {
@@ -44,9 +46,9 @@
         }
     </script>
     <!-- Docsify v4 -->
+
     <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-    <script src="//unpkg.com/docsify-copy-code"></script>
-    <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
     <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-clike.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-go.min.js"></script>
@@ -60,6 +62,7 @@
     <script src="//unpkg.com/prismjs/components/prism-nasm.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
 
+    <script src="//unpkg.com/docsify-copy-code"></script>
 </body>
 
 </html>
